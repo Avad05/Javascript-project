@@ -1,3 +1,4 @@
+// getting computer choice
 function getComputerChoice(){
     var choice = Math.floor(Math.random() * (3 - 0) + 0);
     if(choice === 0){
@@ -16,8 +17,8 @@ function getComputerChoice(){
         
     }
 }
-//var get = getComputerChoice();
 
+// getting human choice
 function getHumanChoice(){
      var getH = prompt("Enter Rock or Paper or Scissors");
      getH = getH.toLowerCase();
@@ -25,7 +26,8 @@ function getHumanChoice(){
      return getH;
      
 }
-//var Get = getHumanChoice();
+
+// main code for game and logic behind it
 function playGame(n){
     let humanScore = 0;
     let computerScore = 0;
@@ -34,59 +36,60 @@ function playGame(n){
  function playRound(humanSelection,computerSelection){
     if(humanSelection === computerSelection){
         console.log("That's a tie.");
-        console.log("--------------------------------");
+        
     }
     else if(humanSelection == 'rock'){
         if(computerSelection == 'paper'){
             console.log("You lose! paper beats rock.");
-            console.log("--------------------------------");
+            
             computerScore ++;
         }
         else {
             console.log("You win! rock beats scissors.");
-            console.log("--------------------------------");
+            
             humanScore ++;
         }
     }
     else if(humanSelection == 'paper'){
         if(computerSelection == 'rock'){
             console.log("You win! paper beats rock.");
-            console.log("--------------------------------");
+            
             humanScore ++;
         }
         else{
             console.log("You lose! scissors beat paper.");
-            console.log("--------------------------------");
+            
             computerScore ++;
         }
     }
     else if(humanSelection == 'scissors'){
         if(computerSelection == 'rock'){
             console.log("You lose! rock beats scissors.");
-            console.log("--------------------------------");
+            
             computerScore ++;
         }
         else{
             console.log("You win! scissors beat paper.");
-            console.log("--------------------------------");
+            
             humanScore ++;
         }
     }
     else{
         console.log("Enter a valid input.");
-        console.log("--------------------------------");
+        
     }
  }
  
-
+console.log(`Score- your score ${humanScore}  computer's score ${computerScore}`);
+console.log("--------------------------------");
 
   
   const humanChoice = getHumanChoice();
   const computerChoice = getComputerChoice();
- /* console.log(humanChoice);
-  console.log(computerChoice);*/
+ 
   
   playRound(humanChoice, computerChoice);
+
   
  
 n--;
